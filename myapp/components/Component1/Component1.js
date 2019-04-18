@@ -5,7 +5,7 @@ export default class Component1 extends Component {
   render() {
     return (
       <View>
-        <Text>This is Component 1</Text>
+        <Text>{this.props.message}</Text>
       </View>
     );
   }
