@@ -5,15 +5,17 @@ export default class Component1 extends Component {
   constructor() {
     super();
     this.state = {
-      name: "Josh"
+      name: "Josh",
+      showName: true
     };
   }
 
   render() {
+    let name = this.state.showName ? this.state.name : "No Name";
     return (
       <View>
         <Text>{this.props.message}</Text>
-        <Text>{this.state.name}</Text>
+        <Text>{name}</Text>
       </View>
     );
   }
