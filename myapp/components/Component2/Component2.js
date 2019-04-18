@@ -5,7 +5,7 @@ export default class Component2 extends Component {
   render() {
     return (
       <View>
-        <Text>Hello Josh</Text>
+        <Text style={{ color: "red" }}>Hello Josh</Text>
       </View>
     );
   }
