@@ -1,5 +1,12 @@
 import React, { Component } from "react";
-import { AppRegistry, Text, View, ListView, StyleSheet } from "react-native";
+import {
+  AppRegistry,
+  Text,
+  View,
+  ListView,
+  StyleSheet,
+  TouchableHighlight
+} from "react-native";
 
 export default class Component5 extends Component {
   constructor() {
@@ -26,13 +33,26 @@ export default class Component5 extends Component {
       });
   }
 
+  onPress(user) {
+    this.props.navigator.push({
+      id: "component6",
+      user: user
+    });
+  }
+
   renderRow(user, sectionID, rowId, highlightRow) {
     return (
-      <View style={styles.row}>
-        <Text style={styles.rowText}>
-          {user.name} : {user.email}{" "}
-        </Text>
-      </View>
+      <TouchableHighlight
+        onPress={() => {
+          this.onPress(user);
+        }}
+      >
+        <View style={styles.row}>
+          <Text style={styles.rowText}>
+            {user.name} : {user.email}{" "}
+          </Text>
+        </View>
+      </TouchableHighlight>
     );
   }
 
